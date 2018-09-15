@@ -14,12 +14,11 @@ let delayMiddleware = (req, res, next) => {
         next()
     }
 }
-console.log(path.join(__dirname, 'static'))
+
 app.use(delayMiddleware)
 app.use(express.static(path.join(__dirname, 'static')))
 
 app.get('/', (req, res) => {
-    console.warn(__dirname)
     res.sendFile(path.join(__dirname, 'index.html'));
 })
 
